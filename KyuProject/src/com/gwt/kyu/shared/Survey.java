@@ -7,4 +7,6 @@ public class Survey {
  * */
  //
 	/*deneme*/
+	
+	//Çaðlar Pull Etmeyi Unutma :)
 }
