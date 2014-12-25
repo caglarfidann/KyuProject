@@ -49,6 +49,8 @@ public class SurveyPresenter implements Presenter {
 		public ListBox getCountryList();
 
 		public ListBox getCityList();
+		
+		public Button getDetail();
 	}
 
 	public SurveyPresenter(Display view) {
@@ -114,6 +116,15 @@ public class SurveyPresenter implements Presenter {
 					view.getImgSurname().setUrl("http://images.clipartpanda.com/wrong-clipart-7iaLbGKiA.png");
 					view.getShowlButton().setEnabled(false);
 				}
+			}
+		});
+		
+		view.getDetail().addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				Window.alert("Cihan Burda!!!!!");
 			}
 		});
 	}

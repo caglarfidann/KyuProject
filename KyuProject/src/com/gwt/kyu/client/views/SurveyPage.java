@@ -43,6 +43,7 @@ public class SurveyPage extends Composite implements SurveyPresenter.Display {
 	private ListBox countryList=new ListBox(false);
 	private ListBox cityList=new ListBox(false);
 	private Button show=new Button("Show");
+	private Button chn = new Button("Cihan Burda!!!!!");
 	//private CheckboxGroup Checkgroup=new CheckboxGroup();
 	private AbsolutePanel absolutePanel;
 	public SurveyPage() {
@@ -175,5 +176,11 @@ public class SurveyPage extends Composite implements SurveyPresenter.Display {
 	public Image getImgSurname() {
 		// TODO Auto-generated method stub
 		return ImgSurname;
+	}
+
+	@Override
+	public Button getDetail() {
+		// TODO Auto-generated method stub
+		return chn;
 	}
 }
