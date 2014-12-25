@@ -86,6 +86,7 @@ public class SurveyPage extends Composite implements SurveyPresenter.Display {
 		onRadioBUtton(absolutePanel);
 		absolutePanel.add(show,850,250);
 		container.add(absolutePanel);
+		absolutePanel.add(chn,900,400);
 	}
 	
 	public void onRadioBUtton(AbsolutePanel absolutePanel){
