@@ -100,7 +100,7 @@ public class SurveyPresenter implements Presenter {
 				}
 			}
 		});
-		
+		//Cihan ULUS
 		view.getSurnameText().addKeyPressHandler(new KeyPressHandler() {
 			
 			@Override
