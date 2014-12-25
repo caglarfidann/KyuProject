@@ -6,4 +6,5 @@ public class Survey {
  * bos gardas bura doldur
  * */
  //
+	/*deneme*/
 }
