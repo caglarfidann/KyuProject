@@ -4,7 +4,6 @@ import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.event.dom.client.KeyPressEvent;
 import com.google.gwt.event.dom.client.KeyPressHandler;
 import com.google.gwt.user.client.Window;
@@ -50,7 +49,6 @@ public class SurveyPresenter implements Presenter {
 
 		public ListBox getCityList();
 		
-		public Button getDetail();
 	}
 
 	public SurveyPresenter(Display view) {
@@ -102,7 +100,7 @@ public class SurveyPresenter implements Presenter {
 				}
 			}
 		});
-		//Cihan ULUS
+		
 		view.getSurnameText().addKeyPressHandler(new KeyPressHandler() {
 			
 			@Override
@@ -116,15 +114,6 @@ public class SurveyPresenter implements Presenter {
 					view.getImgSurname().setUrl("http://images.clipartpanda.com/wrong-clipart-7iaLbGKiA.png");
 					view.getShowlButton().setEnabled(false);
 				}
-			}
-		});
-		
-		view.getDetail().addClickHandler(new ClickHandler() {
-			
-			@Override
-			public void onClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				Window.alert("Cihan Burda!!!!!");
 			}
 		});
 	}
