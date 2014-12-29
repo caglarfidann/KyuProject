@@ -6,17 +6,18 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.KeyPressEvent;
 import com.google.gwt.event.dom.client.KeyPressHandler;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
+import com.gwt.kyu.client.views.ExamPage;
 import com.gwt.kyu.server.ListBoxOperation;
 import com.gwt.kyu.server.ValidateOperation;
 import com.gwt.kyu.shared.User;
-
+//29.12.2014(14:10)
 public class SurveyPresenter implements Presenter {
 	Display view;
 	final String[] Country = { "France", "Italy", "Netherlands", "Spain",
@@ -88,6 +89,8 @@ public class SurveyPresenter implements Presenter {
 				user.setCity(view.getCityList().getItemText(view.getCityList().getSelectedIndex()));
 				user.setTeam(view.getSelectedRadio());
 				
+				Presenter prsntr=new ExamPresenter(user,new ExamPage());
+				prsntr.go(RootPanel.get());
 			}
 		});
 		view.getCountryList().addChangeHandler(new ChangeHandler() {
