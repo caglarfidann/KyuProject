@@ -1,6 +1,7 @@
 package com.gwt.kyu.client.presenters;
 
 import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwt.kyu.shared.User;
 
@@ -16,6 +17,7 @@ public class ExamPresenter implements Presenter {
 		
 		public void onInitialize(HasWidgets container);
 		
+		public Label userNameLabel();
 	}
 	
 	public ExamPresenter(User user,Display view) {
@@ -38,6 +40,7 @@ public class ExamPresenter implements Presenter {
 		container.clear();
 		container.add(view.asWidget());
 		view.onInitialize(container);
+		view.userNameLabel().setText(user.getUserName()+"  "+user.getUserSurname());
 	}
 
 }
