@@ -66,7 +66,7 @@ public class ExamPresenter implements Presenter {
 		for (String soru : quest) {
 			final Label question=new Label("Question--"+(count+1));
 			panel.add(question,750,70+(120*count));
-			final Label question1=new Label(s); 
+			final Label question1=new Label(soru); 
 			panel.add(question1,750,90+(120*count));
 			String[] questionAnswer=examOperation.getAnswer(soru);
 			for (int i = 0; i < questionAnswer.length; i++) {
