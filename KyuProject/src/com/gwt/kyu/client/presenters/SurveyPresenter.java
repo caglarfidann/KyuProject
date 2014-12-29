@@ -14,6 +14,8 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwt.kyu.server.ListBoxOperation;
+import com.gwt.kyu.server.ValidateOperation;
+import com.gwt.kyu.shared.User;
 
 public class SurveyPresenter implements Presenter {
 	Display view;
@@ -21,6 +23,7 @@ public class SurveyPresenter implements Presenter {
 			"Turkey", "United Kingdom", "U.S.A." };
 	String[] cityList;
 	ListBoxOperation listOperation;
+	ValidateOperation validate;
 	
 	public interface Display {
 		public void clear();
@@ -52,13 +55,13 @@ public class SurveyPresenter implements Presenter {
 		public ListBox getCountryList();
 
 		public ListBox getCityList();
-		
 	}
 
 	public SurveyPresenter(Display view) {
 		// TODO Auto-generated constructor stub
 		this.view = view;
 		listOperation = new ListBoxOperation();
+		validate=new ValidateOperation();
 		bind();
 	}
 
@@ -77,9 +80,13 @@ public class SurveyPresenter implements Presenter {
 			@Override
 			public void onClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				if (view.getSelectedRadio()!=null) {
-					Window.alert("Selected Team : " + view.getSelectedRadio());
-				}
+				User user=new User();
+				user.setUserName(view.getNameText().getText());
+				user.setUserSurname(view.getSurnameText().getText());
+				user.setEmail(view.getMailText().getText());				
+				user.setCountry(Country[view.getCountryList().getSelectedIndex()]);
+				user.setCity(view.getCityList().getItemText(view.getCityList().getSelectedIndex()));
+				user.setTeam(view.getSelectedRadio());
 				
 			}
 		});
@@ -97,7 +104,7 @@ public class SurveyPresenter implements Presenter {
 			@Override
 			public void onKeyPress(KeyPressEvent event) {
 				// TODO Auto-generated method stub
-				if (listOperation.validateFirstName(view.getNameText()
+				if (validate.validateFirstName(view.getNameText()
 						.getText()) == true) {
 					view.getImgName().setUrl("http://www.clker.com/cliparts/G/F/D/c/j/r/correct-md.png");
 					view.getShowlButton().setEnabled(true);
@@ -114,7 +121,7 @@ public class SurveyPresenter implements Presenter {
 			@Override
 			public void onKeyPress(KeyPressEvent event) {
 				// TODO Auto-generated method stub
-				if (listOperation.validateLastName(view.getSurnameText()
+				if (validate.validateLastName(view.getSurnameText()
 						.getText()) == true) {
 					view.getImgSurname().setUrl("http://www.clker.com/cliparts/G/F/D/c/j/r/correct-md.png");
 					view.getShowlButton().setEnabled(true);
@@ -129,7 +136,7 @@ public class SurveyPresenter implements Presenter {
 			@Override
 			public void onKeyPress(KeyPressEvent event) {
 				// TODO Auto-generated method stub
-				if (listOperation.validateMail(view.getMailText().getText())==true) {
+				if (validate.validateMail(view.getMailText().getText())==true) {
 					view.getMailImage().setUrl("http://www.clker.com/cliparts/G/F/D/c/j/r/correct-md.png");
 					view.getShowlButton().setEnabled(true);
 				}
