@@ -12,22 +12,22 @@ public class ExamOperation {
 		String[] q3 = { "8", "7", "6","5"};
 		String[] q4 = { "198", "999", "9999", "39996"};
 		String[] q5 = { "9", "10", "11", "12"};
-		hm.put("1'den 100'e kadar yazdýðýmýzda kaç defa '0' rakamýný kullanýrýz?", q1);
-		hm.put("1'den 100'e kadar yazdýðýmýzda kaç defa '6' rakamýný kullanýrýz?", q2);
-		hm.put("12 ile 49 arasýnda 5 ile bölünebilen kaç tane doðal sayý vardýr?", q3);
-		hm.put("41258 sayýsýnýn, binler basamaðýndaki rakamýn baðýl deðeri ile mutlak deðeri arasýndaki fark kaçtýr?", q4);
-		hm.put("2 ile 56 arasýnda 5'e bölünebilen kaç tane doðal sayý vardýr?", q5);
+		hm.put("1'den 100'e kadar yazdigimizda kac defa '0' rakamini kullaniriz?", q1);
+		hm.put("1'den 100'e kadar yazdigimizda kac defa '6' rakamini kullaniriz?", q2);
+		hm.put("12 ile 49 arasinda 5 ile bolunebilen kac tane dogal sayi vardir??", q3);
+		hm.put("41258 sayisinin, binler basamagindaki rakamin bagil degeri ile mutlak degeri arasindaki fark kactir?", q4);
+		hm.put("2 ile 56 arasinda 5'e bolunebilen kac tane dogal sayi vardir?", q5);
 		return hm;
 	}
 	
 	public HashMap<String, String> getCorrectAnswer() {
 		HashMap<String, String> hm = new HashMap<String, String>();
 		hm.clear();
-		hm.put("1'den 100'e kadar yazdýðýmýzda kaç defa '0' rakamýný kullanýrýz?", "10");
-		hm.put("1'den 100'e kadar yazdýðýmýzda kaç defa '6' rakamýný kullanýrýz?", "10");
-		hm.put("12 ile 49 arasýnda 5 ile bölünebilen kaç tane doðal sayý vardýr?", "7");
-		hm.put("41258 sayýsýnýn, binler basamaðýndaki rakamýn baðýl deðeri ile mutlak deðeri arasýndaki fark kaçtýr?", "9999");
-		hm.put("2 ile 56 arasýnda 5'e bölünebilen kaç tane doðal sayý vardýr?", "11");
+		hm.put("1'den 100'e kadar yazdigimizda kac defa '0' rakamini kullaniriz?", "10");
+		hm.put("1'den 100'e kadar yazdigimizda kac defa '6' rakamini kullaniriz?", "10");
+		hm.put("12 ile 49 arasinda 5 ile bolunebilen kac tane dogal sayi vardir?", "7");
+		hm.put("41258 sayisinin, binler basamagindaki rakamin bagil degeri ile mutlak degeri arasindaki fark kactir?", "9999");
+		hm.put("2 ile 56 arasinda 5'e bolunebilen kac tane dogal sayi vardir?", "11");
 		return hm;
 	}
 	
@@ -37,7 +37,7 @@ public class ExamOperation {
 		return keys;
 	}
 	
-	public String[] getAnswer(String question) {
+	public String[] getAnswer(Set<String> question) {
 		String[] answerArray = null;
 		HashMap<String, String[]> hm = getQuestionAnswer();
 		Set<String> keys = hm.keySet();

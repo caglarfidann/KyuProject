@@ -62,4 +62,10 @@ public class ExamPage extends Composite implements ExamPresenter.Display{
 		// TODO Auto-generated method stub
 		return user;
 	}
+
+	@Override
+	public AbsolutePanel getPanel() {
+		// TODO Auto-generated method stub
+		return absolutePanel;
+	}
 }
