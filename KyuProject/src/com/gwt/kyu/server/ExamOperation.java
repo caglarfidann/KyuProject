@@ -37,7 +37,7 @@ public class ExamOperation {
 		return keys;
 	}
 	
-	public String[] getAnswer(Set<String> question) {
+	public String[] getAnswer(String question) {
 		String[] answerArray = null;
 		HashMap<String, String[]> hm = getQuestionAnswer();
 		Set<String> keys = hm.keySet();
