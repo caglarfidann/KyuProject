@@ -50,4 +50,9 @@ public class ListBoxOperation {
 	public boolean validateLastName(String lastName) {
 		return lastName.matches("[a-zA-z]+([ '-][a-zA-Z]+)*");
 	}
+	
+	public boolean validateMail(String mail) {
+		return mail.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+				+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+	}
 }

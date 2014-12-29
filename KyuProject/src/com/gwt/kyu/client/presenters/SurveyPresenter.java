@@ -38,10 +38,14 @@ public class SurveyPresenter implements Presenter {
 		public TextBox getNameText();
 
 		public TextBox getSurnameText();
+		
+		public TextBox getMailText();
 
 		public Image getImgName();
 
 		public Image getImgSurname();
+		
+		public Image getMailImage();
 
 		public void fillListCountry(String[] Country);
 
@@ -67,12 +71,16 @@ public class SurveyPresenter implements Presenter {
 		getSelectedCountry("France");
 		view.getImgName().setUrl("http://images.clipartpanda.com/wrong-clipart-7iaLbGKiA.png");
 		view.getImgSurname().setUrl("http://images.clipartpanda.com/wrong-clipart-7iaLbGKiA.png");
+		view.getMailImage().setUrl("http://images.clipartpanda.com/wrong-clipart-7iaLbGKiA.png");
 		view.getShowlButton().setEnabled(false);
 		view.getShowlButton().addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-				Window.alert("Selected Team : " + view.getSelectedRadio());
+				if (view.getSelectedRadio()!=null) {
+					Window.alert("Selected Team : " + view.getSelectedRadio());
+				}
+				
 			}
 		});
 		view.getCountryList().addChangeHandler(new ChangeHandler() {
@@ -112,6 +120,21 @@ public class SurveyPresenter implements Presenter {
 					view.getShowlButton().setEnabled(true);
 				} else {
 					view.getImgSurname().setUrl("http://images.clipartpanda.com/wrong-clipart-7iaLbGKiA.png");
+					view.getShowlButton().setEnabled(false);
+				}
+			}
+		});
+		view.getMailText().addKeyPressHandler(new KeyPressHandler() {
+			
+			@Override
+			public void onKeyPress(KeyPressEvent event) {
+				// TODO Auto-generated method stub
+				if (listOperation.validateMail(view.getMailText().getText())==true) {
+					view.getMailImage().setUrl("http://www.clker.com/cliparts/G/F/D/c/j/r/correct-md.png");
+					view.getShowlButton().setEnabled(true);
+				}
+				else{
+					view.getMailImage().setUrl("http://images.clipartpanda.com/wrong-clipart-7iaLbGKiA.png");
 					view.getShowlButton().setEnabled(false);
 				}
 			}

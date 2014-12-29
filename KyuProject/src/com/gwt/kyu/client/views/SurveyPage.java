@@ -24,7 +24,7 @@ public class SurveyPage extends Composite implements SurveyPresenter.Display {
 	interface SurveyPageUiBinder extends UiBinder<Widget, SurveyPage> {
 	}
 	final String[] Items = { "FB", "GS", "BJK", "TS"};
-	final String[] Favorite={"Soccer","Tennis","Basketball","Volleyball","Swimming","Other"};
+	//final String[] Favorite={"Soccer","Tennis","Basketball","Volleyball","Swimming","Other"};
 	private SurveyPresenter surveyPresenter;
 	public static String selectedRadioButton;
 	public static String selectedCheckBox;
@@ -32,14 +32,17 @@ public class SurveyPage extends Composite implements SurveyPresenter.Display {
 	private Label survey=new Label("Survey");
 	private Label name=new Label("Name :");
 	private Label surname=new Label("Surname :");
+	private Label mail=new Label("E-Mail :");
 	private Label country=new Label("Country :");
 	private Label city=new Label("City :");
-	private Label favorite=new Label("Favorite Sport : ");
+	//private Label favorite=new Label("Favorite Sport : ");
 	private Label team=new Label("Favorite Team :"); 
 	private TextBox nameText=new TextBox();
 	private Image ImgName=new Image();//http://www.clker.com/cliparts/G/F/D/c/j/r/correct-md.png
 	private Image ImgSurname=new Image();//http://images.clipartpanda.com/wrong-clipart-7iaLbGKiA.png
+	private Image ImgMail=new Image();
 	private TextBox surnameText=new TextBox();
+	private TextBox mailText=new TextBox();
 	private ListBox countryList=new ListBox(false);
 	private ListBox cityList=new ListBox(false);
 	private Button show=new Button("Show");
@@ -64,26 +67,34 @@ public class SurveyPage extends Composite implements SurveyPresenter.Display {
 	@Override
 	public void onInitialize(HasWidgets container) {
 		// TODO Auto-generated method stub 
+		int height=1920;
+		int width=1080;
 		absolutePanel = new AbsolutePanel();
-		absolutePanel.setSize("1920px", "1080px");
-		absolutePanel.add(survey,850,10);
+		absolutePanel.setSize(String.valueOf(height)+"px",String.valueOf(width)+"px");
+		absolutePanel.add(survey,880,10);
 		absolutePanel.add(name,750,40);
-		absolutePanel.add(nameText,900,40);
+		absolutePanel.add(nameText,850,40);
 		ImgName.setSize("20px","20px");
-		absolutePanel.add(ImgName,1100,40);
+		absolutePanel.add(ImgName,1000,40);
 		absolutePanel.add(surname,750,70);
-		absolutePanel.add(surnameText,900,70);
+		absolutePanel.add(surnameText,850,70);
 		ImgSurname.setSize("20px","20px");
-		absolutePanel.add(ImgSurname,1100,70);
-		absolutePanel.add(country,750,100);
-		absolutePanel.add(countryList,900,100);
-		absolutePanel.add(city,750,130);
-		absolutePanel.add(cityList,900,130);
-		absolutePanel.add(favorite,750,160);
-		onCheckBox(absolutePanel);
+		absolutePanel.add(ImgSurname,1000,70);
+		
+		absolutePanel.add(mail,750,100);
+		absolutePanel.add(mailText,850,100);
+		ImgMail.setSize("20px","20px");
+		absolutePanel.add(ImgMail,1000,100);
+		
+		absolutePanel.add(country,750,130);
+		absolutePanel.add(countryList,850,130);
+		absolutePanel.add(city,750,160);
+		absolutePanel.add(cityList,850,160);
+		//absolutePanel.add(favorite,750,160);
+		//onCheckBox(absolutePanel);
 		absolutePanel.add(team,750,190);
 		onRadioBUtton(absolutePanel);
-		absolutePanel.add(show,850,250);
+		absolutePanel.add(show,880,230);
 		container.add(absolutePanel);
 	}
 	
@@ -98,11 +109,14 @@ public class SurveyPage extends Composite implements SurveyPresenter.Display {
 					selectedRadioButton=radioButton.getText();
 				}
 			});
-			absolutePanel.add(radioButton,900+(50*i),190);
+			absolutePanel.add(radioButton,850+(50*i),190);
+			if(i==0){
+				radioButton.setChecked(true);
+			}
 		}
 	}
 	
-	public void onCheckBox(AbsolutePanel absolutePanel){	
+/*	public void onCheckBox(AbsolutePanel absolutePanel){	
 		for (int i = 0; i < Favorite.length; i++) {
 		    final CheckBox checkBox=new CheckBox(Favorite[i]);
 			//Group yapýlacak??????????????
@@ -120,7 +134,7 @@ public class SurveyPage extends Composite implements SurveyPresenter.Display {
 			});
 			absolutePanel.add(checkBox,900+(90*i),160);		
 		}
-	}
+	}*/
 	@Override
 	public Button getShowlButton() {
 		// TODO Auto-generated method stub
@@ -175,5 +189,17 @@ public class SurveyPage extends Composite implements SurveyPresenter.Display {
 	public Image getImgSurname() {
 		// TODO Auto-generated method stub
 		return ImgSurname;
+	}
+
+	@Override
+	public TextBox getMailText() {
+		// TODO Auto-generated method stub
+		return mailText;
+	}
+
+	@Override
+	public Image getMailImage() {
+		// TODO Auto-generated method stub
+		return ImgMail;
 	}
 }
