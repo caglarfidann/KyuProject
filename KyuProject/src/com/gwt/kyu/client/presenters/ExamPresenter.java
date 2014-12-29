@@ -40,7 +40,7 @@ public class ExamPresenter implements Presenter {
 		container.clear();
 		container.add(view.asWidget());
 		view.onInitialize(container);
-		view.userNameLabel().setText(user.getUserName()+"  "+user.getUserSurname());
+		view.userNameLabel().setText("--"+user.getUserName()+"  "+user.getUserSurname()+"--");
 	}
 
 }

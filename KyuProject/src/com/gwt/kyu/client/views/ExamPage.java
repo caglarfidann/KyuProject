@@ -24,6 +24,7 @@ public class ExamPage extends Composite implements ExamPresenter.Display{
 	
 	private Label exam=new Label("--EXAM--");
 	private Label user=new Label();
+	
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
@@ -44,7 +45,7 @@ public class ExamPage extends Composite implements ExamPresenter.Display{
 		absolutePanel = new AbsolutePanel();
 		absolutePanel.setSize(String.valueOf(height)+"px",String.valueOf(width)+"px");
 		absolutePanel.add(exam,880,10);
-		absolutePanel.add(user,850,40);
+		absolutePanel.add(user,870,40);
 		
 		
 		
