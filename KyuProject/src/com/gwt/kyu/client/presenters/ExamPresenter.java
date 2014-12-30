@@ -8,13 +8,12 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.DialogBox;
-import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RadioButton;
-import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
+import com.gwt.kyu.client.views.ResultPage;
 import com.gwt.kyu.server.ExamOperation;
 import com.gwt.kyu.shared.User;
 
@@ -68,6 +67,10 @@ public class ExamPresenter implements Presenter {
 						}
 					}		
 					Window.alert("Sinav Sonucunuz 5 uzerinden "+String.valueOf(count)+" !!!");
+					
+					Presenter prsntr=new ResultPresenter(user,hm,new ResultPage());
+					prsntr.go(RootPanel.get());
+					
 				} catch (Exception e) {
 					Window.alert("SORUN VAR!!!");
 				}

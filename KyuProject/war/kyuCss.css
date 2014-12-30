@@ -1,0 +1,12 @@
+body{
+   text-align: center;
+   background-color: window;
+}
+
+.gwt-Green-Button{ 
+   color:green;   
+}
+.gwt-Label-Style{
+	color:#808080;
+	font-weight: bold;
+}

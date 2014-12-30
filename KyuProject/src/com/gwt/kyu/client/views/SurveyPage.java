@@ -4,9 +4,9 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Image;
@@ -67,10 +67,10 @@ public class SurveyPage extends Composite implements SurveyPresenter.Display {
 	@Override
 	public void onInitialize(HasWidgets container) {
 		// TODO Auto-generated method stub 
-		int height=1920;
-		int width=1080;
+		int width=Window.getClientWidth();
+		int height=Window.getClientHeight();
 		absolutePanel = new AbsolutePanel();
-		absolutePanel.setSize(String.valueOf(height)+"px",String.valueOf(width)+"px");
+		absolutePanel.setSize(String.valueOf(width)+"px",String.valueOf(height)+"px");
 		absolutePanel.add(survey,880,10);
 		absolutePanel.add(name,750,40);
 		absolutePanel.add(nameText,850,40);

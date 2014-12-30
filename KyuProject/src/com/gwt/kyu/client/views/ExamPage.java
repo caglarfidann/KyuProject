@@ -2,6 +2,7 @@ package com.gwt.kyu.client.views;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
@@ -42,10 +43,10 @@ public class ExamPage extends Composite implements ExamPresenter.Display{
 	@Override
 	public void onInitialize(HasWidgets container) {
 		// TODO Auto-generated method stub
-		int height=1920;
-		int width=1080;
+		int width=Window.getClientWidth();
+		int height=Window.getClientHeight();
 		absolutePanel = new AbsolutePanel();
-		absolutePanel.setSize(String.valueOf(height)+"px",String.valueOf(width)+"px");
+		absolutePanel.setSize(String.valueOf(width)+"px",String.valueOf(height)+"px");
 		absolutePanel.add(exam,880,10);
 		absolutePanel.add(user,870,40);
 		absolutePanel.add(submit,890,650);	
