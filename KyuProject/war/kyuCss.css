@@ -2,11 +2,8 @@ body{
    text-align: center;
    background-color: window;
 }
+.gwt-Bold-Label{
+	color:navy;
+	font-weight: bolder;
+}
 
-.gwt-Green-Button{ 
-   color:green;   
-}
-.gwt-Label-Style{
-	color:#808080;
-	font-weight: bold;
-}

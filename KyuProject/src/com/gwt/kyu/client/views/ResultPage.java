@@ -59,25 +59,26 @@ public class ResultPage extends Composite implements ResultPresenter.Display{
 		absolutePanel.setSize(String.valueOf(width)+"px",String.valueOf(height)+"px");
 		absolutePanel.add(resultLabel,880,10);
 		absolutePanel.add(name,750,40);
-		nameLabel.addStyleName(".gwt-Label-Style");
+		
 		absolutePanel.add(nameLabel,850,40);
+		nameLabel.addStyleName("gwt-Bold-Label");
 		absolutePanel.add(surname,750,70);
-		surname.addStyleName(".gwt-Label-Style");
+		surnameLabel.addStyleName("gwt-Bold-Label");
 		absolutePanel.add(surnameLabel,850,70);
 		absolutePanel.add(mail,750,100);
-		mailLabel.addStyleName(".gwt-Label-Style");
+		mailLabel.addStyleName("gwt-Bold-Label");
 		absolutePanel.add(mailLabel,850,100);
 		absolutePanel.add(country,750,130);
-		countryLabel.addStyleName(".gwt-Label-Style");
+		countryLabel.addStyleName("gwt-Bold-Label");
 		absolutePanel.add(countryLabel,850,130);
 		absolutePanel.add(city,750,160);
-		cityLabel.addStyleName(".gwt-Label-Style");
+		cityLabel.addStyleName("gwt-Bold-Label");
 		absolutePanel.add(cityLabel,850,160);
-		absolutePanel.add(team,750,160);
-		teamLabel.addStyleName(".gwt-Label-Style");
-		absolutePanel.add(teamLabel,850,160);
+		absolutePanel.add(team,750,190);
+		teamLabel.addStyleName("gwt-Bold-Label");
+		absolutePanel.add(teamLabel,850,190);
 		
-		absolutePanel.add(resultTable,700,190);
+		absolutePanel.add(resultTable,700,220);
 		container.add(absolutePanel);
 	}
 

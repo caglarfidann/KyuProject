@@ -112,6 +112,7 @@ public class SurveyPage extends Composite implements SurveyPresenter.Display {
 			absolutePanel.add(radioButton,850+(50*i),190);
 			if(i==0){
 				radioButton.setChecked(true);
+				selectedRadioButton=radioButton.getText();
 			}
 		}
 	}

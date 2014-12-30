@@ -65,5 +65,4 @@ public class ResultPresenter implements Presenter {
 		view.getCity().setText(user.getCity());
 		view.getTeam().setText(user.getTeam());
 	}
-
 }
