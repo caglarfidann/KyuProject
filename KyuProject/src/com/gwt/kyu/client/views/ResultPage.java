@@ -1,10 +1,13 @@
 package com.gwt.kyu.client.views;
 
+import java.util.HashMap;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.AbsolutePanel;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Label;
@@ -38,6 +41,8 @@ public class ResultPage extends Composite implements ResultPresenter.Display{
 	private Label cityLabel=new Label();
 	private Label teamLabel=new Label();
 	private CellTable<String> resultTable=new CellTable<String>();
+	
+	private Button exitButton=new Button("Exit");
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
@@ -77,8 +82,8 @@ public class ResultPage extends Composite implements ResultPresenter.Display{
 		absolutePanel.add(team,750,190);
 		teamLabel.addStyleName("gwt-Bold-Label");
 		absolutePanel.add(teamLabel,850,190);
-		
-		absolutePanel.add(resultTable,700,220);
+		absolutePanel.add(exitButton,900,210);
+		absolutePanel.add(resultTable,700,240);
 		container.add(absolutePanel);
 	}
 
@@ -116,6 +121,17 @@ public class ResultPage extends Composite implements ResultPresenter.Display{
 	public Label getTeam() {
 		// TODO Auto-generated method stub
 		return teamLabel;
+	}
+
+	@Override
+	public void fillTable(HashMap<String, String> hashResult) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public Button getExitButton() {
+		// TODO Auto-generated method stub
+		return exitButton;
 	}
 
 }
