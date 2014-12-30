@@ -48,15 +48,8 @@ public class ExamPage extends Composite implements ExamPresenter.Display{
 		absolutePanel.setSize(String.valueOf(height)+"px",String.valueOf(width)+"px");
 		absolutePanel.add(exam,880,10);
 		absolutePanel.add(user,870,40);
-		absolutePanel.add(submit,890,750);
-		
-		
-		
+		absolutePanel.add(submit,890,650);	
 		container.add(absolutePanel);
-	}
-	
-	public void writeQuestion(){
-		
 	}
 
 	@Override
@@ -69,5 +62,11 @@ public class ExamPage extends Composite implements ExamPresenter.Display{
 	public AbsolutePanel getPanel() {
 		// TODO Auto-generated method stub
 		return absolutePanel;
+	}
+
+	@Override
+	public Button getSubmitButton() {
+		// TODO Auto-generated method stub
+		return submit;
 	}
 }

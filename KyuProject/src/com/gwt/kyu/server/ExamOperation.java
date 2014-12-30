@@ -14,7 +14,7 @@ public class ExamOperation {
 		String[] q5 = { "9", "10", "11", "12"};
 		hm.put("1'den 100'e kadar yazdigimizda kac defa '0' rakamini kullaniriz?", q1);
 		hm.put("1'den 100'e kadar yazdigimizda kac defa '6' rakamini kullaniriz?", q2);
-		hm.put("12 ile 49 arasinda 5 ile bolunebilen kac tane dogal sayi vardir??", q3);
+		hm.put("12 ile 49 arasinda 5 ile bolunebilen kac tane dogal sayi vardir?", q3);
 		hm.put("41258 sayisinin, binler basamagindaki rakamin bagil degeri ile mutlak degeri arasindaki fark kactir?", q4);
 		hm.put("2 ile 56 arasinda 5'e bolunebilen kac tane dogal sayi vardir?", q5);
 		return hm;
@@ -23,7 +23,7 @@ public class ExamOperation {
 	public HashMap<String, String> getCorrectAnswer() {
 		HashMap<String, String> hm = new HashMap<String, String>();
 		hm.clear();
-		hm.put("1'den 100'e kadar yazdigimizda kac defa '0' rakamini kullaniriz?", "10");
+		hm.put("1'den 100'e kadar yazdigimizda kac defa '0' rakamini kullaniriz?", "11");
 		hm.put("1'den 100'e kadar yazdigimizda kac defa '6' rakamini kullaniriz?", "10");
 		hm.put("12 ile 49 arasinda 5 ile bolunebilen kac tane dogal sayi vardir?", "7");
 		hm.put("41258 sayisinin, binler basamagindaki rakamin bagil degeri ile mutlak degeri arasindaki fark kactir?", "9999");
