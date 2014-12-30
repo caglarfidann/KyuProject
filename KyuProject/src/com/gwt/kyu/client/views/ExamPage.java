@@ -3,6 +3,7 @@ package com.gwt.kyu.client.views;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.AbsolutePanel;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Label;
@@ -24,6 +25,7 @@ public class ExamPage extends Composite implements ExamPresenter.Display{
 	
 	private Label exam=new Label("--EXAM--");
 	private Label user=new Label();
+	private Button submit=new Button("Submit");
 	
 	@Override
 	public void clear() {
@@ -46,7 +48,7 @@ public class ExamPage extends Composite implements ExamPresenter.Display{
 		absolutePanel.setSize(String.valueOf(height)+"px",String.valueOf(width)+"px");
 		absolutePanel.add(exam,880,10);
 		absolutePanel.add(user,870,40);
-		
+		absolutePanel.add(submit,890,750);
 		
 		
 		

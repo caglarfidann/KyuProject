@@ -71,6 +71,9 @@ public class SurveyPresenter implements Presenter {
 		// TODO Auto-generated method stub
 		view.setPresenter(this);
 		view.clear();
+		view.getNameText().setText("caglar");
+		view.getSurnameText().setText("fidan");
+		view.getMailText().setText("caglar@hotmail.com");
 		view.fillListCountry(Country);
 		getSelectedCountry("France");
 		view.getImgName().setUrl("http://images.clipartpanda.com/wrong-clipart-7iaLbGKiA.png");

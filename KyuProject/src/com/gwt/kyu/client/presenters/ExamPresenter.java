@@ -17,6 +17,7 @@ public class ExamPresenter implements Presenter {
 	Display view;
 	User user;
 	public static HashMap<String, String> hm;
+	public static String selectedRadioButton;
 	ExamOperation examOperation;
 	public interface Display{
 		public void clear();
@@ -37,7 +38,7 @@ public class ExamPresenter implements Presenter {
 		this.view=view;
 		this.user=user;
 		examOperation=new ExamOperation();
-		hm=new HashMap<String, String>();
+		hm = new HashMap<String, String>();	
 		hm.clear();
 		bind();
 	}
@@ -46,8 +47,7 @@ public class ExamPresenter implements Presenter {
 	public void bind() {
 		// TODO Auto-generated method stub
 		view.setPresenter(this);
-		view.clear();
-		fillQuestion();
+		view.clear();	
 	}
 
 	@Override
@@ -57,9 +57,11 @@ public class ExamPresenter implements Presenter {
 		container.add(view.asWidget());
 		view.onInitialize(container);
 		view.userNameLabel().setText("--"+user.getUserName()+"  "+user.getUserSurname()+"--");	
+		fillQuestion();
 	}
 	
 	public void fillQuestion(){	
+		
 		AbsolutePanel panel=view.getPanel();
 		Set<String> quest=examOperation.getAllQuestion();
 		int count=0;
@@ -70,15 +72,18 @@ public class ExamPresenter implements Presenter {
 			panel.add(question1,750,90+(120*count));
 			String[] questionAnswer=examOperation.getAnswer(soru);
 			for (int i = 0; i < questionAnswer.length; i++) {
+				//String answer;
 				final RadioButton radioButton = new RadioButton("Question"+(count+1), questionAnswer[i]);
+				
 				radioButton.addClickHandler(new ClickHandler() {			
 					@Override
 					public void onClick(ClickEvent event) {
-						// TODO Auto-generated method stub
-						hm.put(String.valueOf(soru), radioButton.getText());
+						// TODO Auto-generated method stub				
+						selectedRadioButton=radioButton.getText().toString();
 					}
 				});
-				panel.add(radioButton,750+(50*count),110+(120*count));
+				hm.put(soru, selectedRadioButton);
+				panel.add(radioButton,750+(50*i),110+(120*count));
 			}
 			count++;
 		}
