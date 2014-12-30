@@ -58,23 +58,20 @@ public class ExamPresenter implements Presenter {
 			@Override
 			public void onClick(ClickEvent event) {
 				// TODO Auto-generated method stub
-			/*	String asd="";
-				int count=0;
-				Set<String> keys = hm.keySet();
-				for (String key : keys) {
-					String correct=examOperation.CorrectAnswer(key);
-					if(hm.get(key).equals(correct)){
-						count++;
-					}
-					asd+=hm.get(key)+" / ";
-				}		
-				Window.alert(asd);
-				Window.alert(String.valueOf(count));*/
-				MyDialog myDialog = new MyDialog();
-	            int left = Window.getClientWidth()/ 2;
-	            int top = Window.getClientHeight()/ 2;
-	            myDialog.setPopupPosition(left, top);
-	            myDialog.show();
+				try {
+					int count=0;
+					Set<String> keys = hm.keySet();
+					for (String key : keys) {
+						String correct=examOperation.CorrectAnswer(key);
+						if(hm.get(key).equals(correct)){
+							count++;
+						}
+					}		
+					Window.alert("Sinav Sonucunuz 5 uzerinden "+String.valueOf(count)+" !!!");
+				} catch (Exception e) {
+					Window.alert("SORUN VAR!!!");
+				}
+
 			}
 		});
 		
@@ -117,39 +114,4 @@ public class ExamPresenter implements Presenter {
 			count++;
 		}
 	}
-	
-	 private static class MyDialog extends DialogBox {
-
-	      public MyDialog() {
-	         // Set the dialog box's caption.
-	         setText("My First Dialog");
-
-	         // Enable animation.
-	         setAnimationEnabled(true);
-
-	         // Enable glass background.
-	         setGlassEnabled(true);
-
-	         // DialogBox is a SimplePanel, so you have to set its widget 
-	         // property to whatever you want its contents to be.
-	         Button ok = new Button("OK");
-	         ok.addClickHandler(new ClickHandler() {
-	            public void onClick(ClickEvent event) {
-	               MyDialog.this.hide();
-	            }
-	         });
-
-	         Label label = new Label("This is a simple dialog box.");
-
-	         VerticalPanel panel = new VerticalPanel();
-	         panel.setHeight("100");
-	         panel.setWidth("300");
-	         panel.setSpacing(10);
-	         panel.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-	         panel.add(label);
-	         panel.add(ok);
-
-	         setWidget(panel);
-	      }
-	   }
 }
