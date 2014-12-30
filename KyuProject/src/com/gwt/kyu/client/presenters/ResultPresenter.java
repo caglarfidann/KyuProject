@@ -9,13 +9,13 @@ import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
-import com.gwt.kyu.client.views.ResultPage;
 import com.gwt.kyu.client.views.SurveyPage;
 import com.gwt.kyu.server.ExamOperation;
 import com.gwt.kyu.shared.User;
 
 public class ResultPresenter implements Presenter {
 	HashMap<String, String> resultHash;
+	HashMap<String, String[]> questionHash;
 	Display view;
 	User user;
 	ExamOperation examOperation;
@@ -50,7 +50,7 @@ public class ResultPresenter implements Presenter {
 		
 		public Label getTeam();
 		
-		public void fillTable(HashMap<String, String> hashResult);
+		public void fillTable(HashMap<String, String> hashResult,HashMap<String, String[]> questionHash);
 		
 		public Button getExitButton();
 		
@@ -81,6 +81,7 @@ public class ResultPresenter implements Presenter {
 		view.getCountry().setText(user.getCountry());
 		view.getCity().setText(user.getCity());
 		view.getTeam().setText(user.getTeam());
-		view.fillTable(resultHash);
+	/*	questionHash=examOperation.getQuestionAnswer();
+		view.fillTable(resultHash,questionHash);*/
 	}
 }

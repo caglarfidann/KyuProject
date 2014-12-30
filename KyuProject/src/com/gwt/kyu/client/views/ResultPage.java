@@ -1,5 +1,6 @@
 package com.gwt.kyu.client.views;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.google.gwt.core.client.GWT;
@@ -13,6 +14,7 @@ import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwt.kyu.client.presenters.ResultPresenter;
+import com.gwt.kyu.shared.Exam;
 
 public class ResultPage extends Composite implements ResultPresenter.Display{
 	private ResultPresenter resultPresenter;
@@ -40,7 +42,7 @@ public class ResultPage extends Composite implements ResultPresenter.Display{
 	private Label countryLabel=new Label();
 	private Label cityLabel=new Label();
 	private Label teamLabel=new Label();
-	private CellTable<String> resultTable=new CellTable<String>();
+	private CellTable<Exam> resultTable=new CellTable<Exam>();
 	
 	private Button exitButton=new Button("Exit");
 	@Override
@@ -124,8 +126,8 @@ public class ResultPage extends Composite implements ResultPresenter.Display{
 	}
 
 	@Override
-	public void fillTable(HashMap<String, String> hashResult) {
-		// TODO Auto-generated method stub
+	public void fillTable(HashMap<String, String> hashResult,HashMap<String, String[]> questionHash) {
+
 	}
 
 	@Override
